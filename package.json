@@ -1,0 +1,55 @@
+{
+  "name": "@mobizerg/nest-sendgrid-mail",
+  "description": "A sendgrid mail integration module for nestjs framework",
+  "version": "0.1.0",
+  "author": "Mobizerg",
+  "license": "MIT",
+  "main": "index.js",
+  "keywords": [
+    "nestjs",
+    "sendgrid-mail",
+    "typescript",
+    "mobizerg"
+  ],
+  "scripts": {
+    "build": "rimraf dist && tsc -p tsconfig.json",
+    "pre-commit": "lint-staged",
+    "pre-publish:npm": "npm run build",
+    "publish:npm": "npm publish --access public"
+  },
+  "devDependencies": {
+    "@nestjs/common": "^6.3.1",
+    "@types/lodash": "^4.14.134",
+    "husky": "^2.4.1",
+    "lint-staged": "^8.2.0",
+    "prettier": "^1.18.2",
+    "reflect-metadata": "^0.1.13",
+    "rimraf": "^2.6.3",
+    "rxjs": "^6.5.2",
+    "typescript": "^3.4.5",
+    "ts-node": "^8.2.0"
+  },
+  "dependencies": {
+    "lodash": "^4.17.11",
+    "@sendgrid/mail": "^6.4.0"
+  },
+  "peerDependencies": {
+    "@nestjs/common": "^6.0.0",
+    "reflect-metadata": "^0.1.12",
+    "rxjs": "^6.0.0"
+  },
+  "lint-staged": {
+    "*.ts": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "homepage": "https://github.com/mobizerg/nest-sendgrid-mail",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/mobizerg/nest-sendgrid-mail.git"
+  },
+  "bugs": {
+    "url": "https://github.com/mobizerg/nest-sendgrid-mail/issues"
+  }
+}

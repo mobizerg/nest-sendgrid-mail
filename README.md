@@ -25,7 +25,7 @@ Sendgrid Mail integration module for [Nest.js](https://github.com/nestjs/nest) b
 
 ### Usage
 
-Import the **SendgridMailCoreModule** in `app.module.ts`
+Import the **SendgridMailModule** in `app.module.ts`
 
 ```typescript
 import { Module } from '@nestjs/common';

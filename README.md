@@ -25,7 +25,7 @@ Sendgrid Mail integration module for [Nest.js](https://github.com/nestjs/nest) b
 
 ### Usage
 
-Import the **SendgridMailModule** in `app.module.ts`
+Import the **SendgridMailCoreModule** in `app.module.ts`
 
 ```typescript
 import { Module } from '@nestjs/common';
@@ -82,18 +82,22 @@ export class SendgridMailConfigService implements SendgridMailOptionsFactory {
 Importing inside services
 ```typescript
 import { Injectable } from '@nestjs/common';
-import { InjectMailer } from '@mobizerg/nest-sendgrid-mail';
-import { MailService } from '@sendgrid/mail';
+import { SendgridMailService } from '@mobizerg/nest-sendgrid-mail';
 import { ClientResponse } from "@sendgrid/client/src/response";
 
 @Injectable()
-export class SendgridService {
+export class MailService {
     
-      constructor(@InjectMailer()
-                  private readonly mailer: MailService) {}
+      constructor(private readonly mailer: SendgridMailService) {}
                   
       async send(): Promise<ClientResponse> {
-          return await this.mailer.send(data);
+          return await this.mailer.send({
+            to: "",
+            from: "",
+            subject: "",
+            text: "",
+            html: ""
+          });
       }           
 }
 ```

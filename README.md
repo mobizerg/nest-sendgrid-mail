@@ -90,7 +90,7 @@ export class MailService {
     
       constructor(private readonly mailer: SendgridMailService) {}
                   
-      async send(): Promise<ClientResponse> {
+      async send(): Promise<[ClientResponse, {}]> {
           return await this.mailer.send({
             to: "",
             from: "",
